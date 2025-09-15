@@ -4,25 +4,351 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Me | Charles Royals</title>
-  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#3B82F6',
+            secondary: '#1E40AF',
+            accent: '#10B981',
+            dark: '#1F2937',
+            light: '#F9FAFB'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+    
+    .hero-pattern {
+      background-color: #1E40AF;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    
+    .nav-link {
+      position: relative;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #3B82F6;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    
+    .skill-bar {
+      height: 8px;
+      border-radius: 4px;
+      background-color: #E5E7EB;
+      overflow: hidden;
+    }
+    
+    .skill-progress {
+      height: 100%;
+      border-radius: 4px;
+      background-color: #3B82F6;
+    }
+    
+    .timeline-item {
+      position: relative;
+      padding-left: 2rem;
+    }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: #3B82F6;
+    }
+    
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 1.5rem;
+      width: 2px;
+      height: calc(100% - 1rem);
+      background-color: #E5E7EB;
+    }
+    
+    .timeline-item:last-child::after {
+      display: none;
+    }
+  </style>
 </head>
-<body>
-  <header>
-    <h1>About Me</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Header/Navigation -->
+  <header class="hero-pattern text-white sticky top-0 z-10 shadow-md">
+    <div class="container mx-auto px-4 py-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="text-center md:text-left mb-4 md:mb-0">
+          <h1 class="text-2xl font-bold">Charles Royals</h1>
+          <p class="text-blue-100">Self-Taught Python & Django Developer</p>
+        </div>
+        
+        <nav class="flex space-x-6">
+          <a href="index.html" class="nav-link font-medium hover:text-blue-200">Home</a>
+          <a href="about.html" class="nav-link font-medium hover:text-blue-200 font-semibold underline">About</a>
+          <a href="projects.html" class="nav-link font-medium hover:text-blue-200">Projects</a>
+          <a href="contact.html" class="nav-link font-medium hover:text-blue-200">Contact</a>
+        </nav>
+      </div>
+    </div>
   </header>
 
-  <section>
-    <p>I’m a passionate self-taught developer focused on Python and Django. My goal is to grow into a professional software developer while continuously sharpening my skills through real-world projects.</p>
-  </section>
+  <main class="container mx-auto px-4 py-12">
+    <!-- Page Header -->
+    <div class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">About Me</h1>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">Learn more about my journey, skills, and passion for development</p>
+    </div>
 
-  <footer>
-    <p>&copy; 2025 Charles Royals. All rights reserved.</p>
+    <!-- Intro Section -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
+      <div class="lg:col-span-2">
+        <h2 class="text-3xl font-bold mb-6">My Journey</h2>
+        <p class="text-lg text-gray-700 mb-6">I'm a passionate self-taught developer focused on Python and Django. My goal is to grow into a professional software developer while continuously sharpening my skills through real-world projects.</p>
+        
+        <p class="text-lg text-gray-700 mb-6">My journey in programming started with a curiosity about how websites and applications work. This curiosity quickly turned into a passion as I discovered the power of Python and the Django framework for building robust web applications.</p>
+        
+        <p class="text-lg text-gray-700">I believe in continuous learning and improvement. Every project is an opportunity to learn something new and push my boundaries as a developer.</p>
+      </div>
+      
+      <div class="flex justify-center">
+        <div class="w-64 h-64 bg-blue-100 rounded-full flex items-center justify-center shadow-lg">
+          <span class="text-7xl text-blue-600"><i class="fas fa-code"></i></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Skills Section -->
+    <div class="mb-16">
+      <h2 class="text-3xl font-bold text-center mb-12">My Skills</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Technical Skills -->
+        <div class="bg-white p-8 rounded-xl shadow-lg">
+          <h3 class="text-2xl font-semibold mb-6 flex items-center">
+            <i class="fas fa-laptop-code text-blue-600 mr-3"></i>
+            Technical Skills
+          </h3>
+          
+          <div class="space-y-6">
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-medium">Python</span>
+                <span class="text-blue-600">90%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 90%"></div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-medium">Django</span>
+                <span class="text-blue-600">85%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%"></div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-medium">HTML/CSS</span>
+                <span class="text-blue-600">80%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 80%"></div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-medium">JavaScript</span>
+                <span class="text-blue-600">70%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 70%"></div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-medium">PostgreSQL</span>
+                <span class="text-blue-600">75%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 75%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Soft Skills -->
+        <div class="bg-white p-8 rounded-xl shadow-lg">
+          <h3 class="text-2xl font-semibold mb-6 flex items-center">
+            <i class="fas fa-brain text-blue-600 mr-3"></i>
+            Soft Skills
+          </h3>
+          
+          <div class="space-y-6">
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-medium">Problem Solving</span>
+                <span class="text-blue-600">95%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 95%"></div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-medium">Communication</span>
+                <span class="text-blue-600">85%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%"></div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-medium">Adaptability</span>
+                <span class="text-blue-600">90%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 90%"></div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-medium">Time Management</span>
+                <span class="text-blue-600">80%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 80%"></div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-medium">Team Collaboration</span>
+                <span class="text-blue-600">85%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Journey Timeline -->
+    <div class="mb-16">
+      <h2 class="text-3xl font-bold text-center mb-12">My Development Journey</h2>
+      
+      <div class="bg-white p-8 rounded-xl shadow-lg max-w-3xl mx-auto">
+        <div class="space-y-8">
+          <div class="timeline-item">
+            <h3 class="text-xl font-semibold">The Beginning</h3>
+            <p class="text-gray-500 mb-2">January 2023</p>
+            <p class="text-gray-700">Started learning Python basics through online tutorials and documentation. Built simple scripts and command-line applications.</p>
+          </div>
+          
+          <div class="timeline-item">
+            <h3 class="text-xl font-semibold">First Web Project</h3>
+            <p class="text-gray-500 mb-2">April 2023</p>
+            <p class="text-gray-700">Created my first Django application - a simple blog with CRUD functionality. Learned about models, views, and templates.</p>
+          </div>
+          
+          <div class="timeline-item">
+            <h3 class="text-xl font-semibold">Database Integration</h3>
+            <p class="text-gray-500 mb-2">July 2023</p>
+            <p class="text-gray-700">Explored database management with PostgreSQL. Implemented user authentication and authorization systems.</p>
+          </div>
+          
+          <div class="timeline-item">
+            <h3 class="text-xl font-semibold">Frontend Development</h3>
+            <p class="text-gray-500 mb-2">October 2023</p>
+            <p class="text-gray-700">Dived into frontend technologies including HTML, CSS, and JavaScript. Learned about responsive design and UI/UX principles.</p>
+          </div>
+          
+          <div class="timeline-item">
+            <h3 class="text-xl font-semibold">Portfolio Development</h3>
+            <p class="text-gray-500 mb-2">January 2024</p>
+            <p class="text-gray-700">Built this portfolio website to showcase my projects and skills. Focused on creating a clean, professional design.</p>
+          </div>
+          
+          <div class="timeline-item">
+            <h3 class="text-xl font-semibold">Future Goals</h3>
+            <p class="text-gray-500 mb-2">2024 and Beyond</p>
+            <p class="text-gray-700">Continue learning advanced Django concepts, explore React.js, contribute to open source, and pursue professional opportunities.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Philosophy Section -->
+    <div class="bg-blue-50 rounded-xl p-12 text-center mb-16">
+      <h2 class="text-3xl font-bold mb-6">My Development Philosophy</h2>
+      <p class="text-xl text-gray-700 italic max-w-3xl mx-auto">"I believe that great software is built through continuous learning, attention to detail, and a passion for solving real-world problems. Every line of code is an opportunity to create something meaningful."</p>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="text-center">
+      <h2 class="text-2xl font-bold mb-6">Interested in working together?</h2>
+      <p class="text-gray-600 mb-8 max-w-2xl mx-auto">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+      <a href="contact.html" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition duration-300">Get in Touch</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8 mt-16">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="mb-4 md:mb-0">&copy; 2025 Charles Royals. All rights reserved.</p>
+        <div class="flex space-x-4">
+          <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+            <i class="fab fa-github text-xl"></i>
+          </a>
+          <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+            <i class="fab fa-linkedin text-xl"></i>
+          </a>
+          <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+            <i class="fab fa-twitter text-xl"></i>
+          </a>
+          <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+            <i class="fab fa-dev text-xl"></i>
+          </a>
+        </div>
+      </div>
+    </div>
   </footer>
 </body>
 </html>

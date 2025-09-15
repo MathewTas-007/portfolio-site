@@ -4,38 +4,283 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Charles Royals | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#3B82F6',
+            secondary: '#1E40AF',
+            accent: '#10B981',
+            dark: '#1F2937',
+            light: '#F9FAFB'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+    
+    .hero-pattern {
+      background-color: #1E40AF;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    
+    .project-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .nav-link {
+      position: relative;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #3B82F6;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+  </style>
 </head>
-<body>
-  <header>
-    <h1>Charles Royals</h1>
-    <p>Self-Taught Python & Django Developer</p>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Header/Navigation -->
+  <header class="hero-pattern text-white sticky top-0 z-10 shadow-md">
+    <div class="container mx-auto px-4 py-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="text-center md:text-left mb-4 md:mb-0">
+          <h1 class="text-2xl font-bold">Charles Royals</h1>
+          <p class="text-blue-100">Self-Taught Python & Django Developer</p>
+        </div>
+        
+        <nav class="flex space-x-6">
+          <a href="#welcome" class="nav-link font-medium hover:text-blue-200">Home</a>
+          <a href="#about" class="nav-link font-medium hover:text-blue-200">About</a>
+          <a href="#projects" class="nav-link font-medium hover:text-blue-200">Projects</a>
+          <a href="#contact" class="nav-link font-medium hover:text-blue-200">Contact</a>
+        </nav>
+      </div>
+    </div>
   </header>
 
-  <section id="welcome">
-    <h2>Welcome</h2>
-    <p>This is my developer portfolio. Here, you’ll find my story, projects, and ways to connect with me. Explore and let’s build something amazing together.</p>
-  </section>
+  <main>
+    <!-- Hero Section -->
+    <section id="welcome" class="hero-pattern text-white py-16 md:py-24">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">Welcome to My Portfolio</h2>
+        <p class="text-xl max-w-2xl mx-auto mb-8">I'm a passionate self-taught developer specializing in Python and Django. Here, you'll find my story, projects, and ways to connect with me.</p>
+        <div class="flex justify-center space-x-4">
+          <a href="#projects" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition duration-300">View My Work</a>
+          <a href="#contact" class="border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-blue-600 transition duration-300">Contact Me</a>
+        </div>
+      </div>
+    </section>
 
-  <section id="projects">
-    <h2>My Projects & Clients</h2>
-    <p>Here’s a showcase of my work. You can add images of projects, products, or client work.</p>
-    <div class="client-images">
-      <img src="images/client1.jpg" alt="Project 1">
-      <img src="images/client2.jpg" alt="Project 2">
-      <img src="images/client3.jpg" alt="Project 3">
-      <!-- Add more images here -->
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+            <div class="w-48 h-48 bg-blue-100 rounded-full flex items-center justify-center">
+              <span class="text-6xl text-blue-500"><i class="fas fa-code"></i></span>
+            </div>
+          </div>
+          <div class="md:w-2/3 md:pl-12">
+            <p class="text-lg mb-4">I'm a self-taught developer with a passion for creating clean, efficient web applications using Python and Django.</p>
+            <p class="text-lg mb-6">My journey in programming started 2 years ago, and since then I've been constantly learning and improving my skills through personal projects and continuous study.</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+              <div class="bg-blue-50 p-4 rounded-lg text-center">
+                <i class="fab fa-python text-3xl text-blue-500 mb-2"></i>
+                <p class="font-medium">Python</p>
+              </div>
+              <div class="bg-blue-50 p-4 rounded-lg text-center">
+                <i class="fas fa-database text-3xl text-blue-500 mb-2"></i>
+                <p class="font-medium">Django</p>
+              </div>
+              <div class="bg-blue-50 p-4 rounded-lg text-center">
+                <i class="fab fa-html5 text-3xl text-blue-500 mb-2"></i>
+                <p class="font-medium">HTML/CSS</p>
+              </div>
+              <div class="bg-blue-50 p-4 rounded-lg text-center">
+                <i class="fab fa-js-square text-3xl text-blue-500 mb-2"></i>
+                <p class="font-medium">JavaScript</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-4">My Projects & Clients</h2>
+        <p class="text-center text-lg mb-12 max-w-2xl mx-auto">Here's a showcase of my work. These projects demonstrate my skills in Python, Django, and web development.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project 1 -->
+          <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg">
+            <div class="h-48 bg-blue-200 flex items-center justify-center">
+              <i class="fas fa-laptop-code text-6xl text-blue-600"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">E-Commerce Website</h3>
+              <p class="text-gray-600 mb-4">A full-featured online store built with Django, featuring user authentication, payment processing, and inventory management.</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Django</span>
+                <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Python</span>
+                <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">PostgreSQL</span>
+              </div>
+              <a href="#" class="text-blue-600 font-medium hover:underline">View Project →</a>
+            </div>
+          </div>
+          
+          <!-- Project 2 -->
+          <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg">
+            <div class="h-48 bg-green-200 flex items-center justify-center">
+              <i class="fas fa-chart-line text-6xl text-green-600"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Data Analysis Dashboard</h3>
+              <p class="text-gray-600 mb-4">An interactive dashboard for data visualization and analysis, built with Python and Django.</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Python</span>
+                <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Django</span>
+                <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Chart.js</span>
+              </div>
+              <a href="#" class="text-blue-600 font-medium hover:underline">View Project →</a>
+            </div>
+          </div>
+          
+          <!-- Project 3 -->
+          <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg">
+            <div class="h-48 bg-purple-200 flex items-center justify-center">
+              <i class="fas fa-blog text-6xl text-purple-600"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Blog Platform</h3>
+              <p class="text-gray-600 mb-4">A responsive blog platform with rich text editing, comment system, and user profiles.</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Django</span>
+                <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">HTML/CSS</span>
+                <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">JavaScript</span>
+              </div>
+              <a href="#" class="text-blue-600 font-medium hover:underline">View Project →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Get In Touch</h2>
+        <div class="flex flex-col md:flex-row gap-12">
+          <div class="md:w-1/2">
+            <form class="space-y-6">
+              <div>
+                <label for="name" class="block text-lg font-medium mb-2">Your Name</label>
+                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-300" placeholder="John Doe">
+              </div>
+              <div>
+                <label for="email" class="block text-lg font-medium mb-2">Email Address</label>
+                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-300" placeholder="john@example.com">
+              </div>
+              <div>
+                <label for="message" class="block text-lg font-medium mb-2">Your Message</label>
+                <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-300" placeholder="Hello Charles..."></textarea>
+              </div>
+              <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition duration-300 w-full">Send Message</button>
+            </form>
+          </div>
+          
+          <div class="md:w-1/2">
+            <div class="bg-blue-50 p-8 rounded-xl">
+              <h3 class="text-xl font-bold mb-6">Contact Information</h3>
+              <div class="space-y-4">
+                <div class="flex items-center">
+                  <div class="bg-blue-100 p-3 rounded-full mr-4">
+                    <i class="fas fa-envelope text-blue-600"></i>
+                  </div>
+                  <div>
+                    <p class="font-medium">Email</p>
+                    <p class="text-gray-600">contact@charlesroyals.com</p>
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <div class="bg-blue-100 p-3 rounded-full mr-4">
+                    <i class="fab fa-github text-blue-600"></i>
+                  </div>
+                  <div>
+                    <p class="font-medium">GitHub</p>
+                    <p class="text-gray-600">github.com/charlesroyals</p>
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <div class="bg-blue-100 p-3 rounded-full mr-4">
+                    <i class="fab fa-linkedin text-blue-600"></i>
+                  </div>
+                  <div>
+                    <p class="font-medium">LinkedIn</p>
+                    <p class="text-gray-600">linkedin.com/in/charlesroyals</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="mt-8">
+                <h4 class="text-lg font-medium mb-4">What I'm Looking For</h4>
+                <p class="text-gray-600">I'm currently open to freelance opportunities, collaborative projects, and full-time positions where I can contribute my skills and continue to grow as a developer.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="mb-4 md:mb-0">&copy; 2025 Charles Royals. All rights reserved.</p>
+        <div class="flex space-x-4">
+          <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+            <i class="fab fa-github text-xl"></i>
+          </a>
+          <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+            <i class="fab fa-linkedin text-xl"></i>
+          </a>
+          <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+            <i class="fab fa-twitter text-xl"></i>
+          </a>
+          <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+            <i class="fab fa-dev text-xl"></i>
+          </a>
+        </div>
+      </div>
     </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Charles Royals. All rights reserved.</p>
   </footer>
 </body>
 </html>

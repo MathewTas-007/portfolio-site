@@ -4,31 +4,261 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects | Charles Royals</title>
-  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#3B82F6',
+            secondary: '#1E40AF',
+            accent: '#10B981',
+            dark: '#1F2937',
+            light: '#F9FAFB'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+    
+    .hero-pattern {
+      background-color: #1E40AF;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    
+    .project-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .nav-link {
+      position: relative;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #3B82F6;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    
+    .progress-bar {
+      height: 6px;
+      border-radius: 3px;
+      background-color: #E5E7EB;
+      overflow: hidden;
+    }
+    
+    .progress-fill {
+      height: 100%;
+      border-radius: 3px;
+      background-color: #3B82F6;
+      width: 75%; /* For the in-progress project */
+    }
+  </style>
 </head>
-<body>
-  <header>
-    <h1>My Projects</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Header/Navigation -->
+  <header class="hero-pattern text-white sticky top-0 z-10 shadow-md">
+    <div class="container mx-auto px-4 py-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="text-center md:text-left mb-4 md:mb-0">
+          <h1 class="text-2xl font-bold">Charles Royals</h1>
+          <p class="text-blue-100">Self-Taught Python & Django Developer</p>
+        </div>
+        
+        <nav class="flex space-x-6">
+          <a href="index.html" class="nav-link font-medium hover:text-blue-200">Home</a>
+          <a href="about.html" class="nav-link font-medium hover:text-blue-200">About</a>
+          <a href="projects.html" class="nav-link font-medium hover:text-blue-200 font-semibold underline">Projects</a>
+          <a href="contact.html" class="nav-link font-medium hover:text-blue-200">Contact</a>
+        </nav>
+      </div>
+    </div>
   </header>
 
-  <section>
-    <ul>
-      <li><strong>LogHub</strong> – Django-based log tracking app with authentication & secure storage.</li>
-      <li><strong>Alien Invasion Game</strong> – 2D arcade shooter with OOP and collision mechanics.</li>
-      <li><strong>Remnants Blog</strong> – News & Media platform for trending topics.</li>
-      <li><strong>WildPal</strong> – Wildlife-themed website with creative design.</li>
-      <li><strong>Ghetto Saga – Kyekyo</strong> – Story-driven open-world Python game (in progress).</li>
-    </ul>
-  </section>
+  <main class="container mx-auto px-4 py-12">
+    <!-- Page Header -->
+    <div class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">My Projects</h1>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">A collection of my work showcasing my skills in Python, Django, and web development.</p>
+    </div>
 
-  <footer>
-    <p>&copy; 2025 Charles Royals. All rights reserved.</p>
+    <!-- Projects Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+      <!-- LogHub -->
+      <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg flex flex-col h-full">
+        <div class="h-48 bg-blue-600 flex items-center justify-center">
+          <i class="fas fa-server text-6xl text-white"></i>
+        </div>
+        <div class="p-6 flex-grow">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-xl font-bold">LogHub</h3>
+            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Completed</span>
+          </div>
+          <p class="text-gray-600 mb-4">Django-based log tracking application with user authentication and secure storage capabilities.</p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Django</span>
+            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Python</span>
+            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">PostgreSQL</span>
+            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Authentication</span>
+          </div>
+        </div>
+        <div class="px-6 pb-6">
+          <a href="#" class="block text-center bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition duration-300">View Project</a>
+        </div>
+      </div>
+
+      <!-- Alien Invasion Game -->
+      <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg flex flex-col h-full">
+        <div class="h-48 bg-purple-600 flex items-center justify-center">
+          <i class="fas fa-gamepad text-6xl text-white"></i>
+        </div>
+        <div class="p-6 flex-grow">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-xl font-bold">Alien Invasion Game</h3>
+            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Completed</span>
+          </div>
+          <p class="text-gray-600 mb-4">2D arcade shooter game built with Python using object-oriented programming principles and collision detection mechanics.</p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Python</span>
+            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Pygame</span>
+            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">OOP</span>
+            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Game Dev</span>
+          </div>
+        </div>
+        <div class="px-6 pb-6">
+          <a href="#" class="block text-center bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition duration-300">View Project</a>
+        </div>
+      </div>
+
+      <!-- Remnants Blog -->
+      <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg flex flex-col h-full">
+        <div class="h-48 bg-green-600 flex items-center justify-center">
+          <i class="fas fa-blog text-6xl text-white"></i>
+        </div>
+        <div class="p-6 flex-grow">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-xl font-bold">Remnants Blog</h3>
+            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Completed</span>
+          </div>
+          <p class="text-gray-600 mb-4">News and media platform focused on trending topics with content management and user engagement features.</p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Django</span>
+            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">HTML/CSS</span>
+            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">JavaScript</span>
+            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">CMS</span>
+          </div>
+        </div>
+        <div class="px-6 pb-6">
+          <a href="#" class="block text-center bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition duration-300">View Project</a>
+        </div>
+      </div>
+
+      <!-- WildPal -->
+      <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg flex flex-col h-full">
+        <div class="h-48 bg-yellow-600 flex items-center justify-center">
+          <i class="fas fa-leaf text-6xl text-white"></i>
+        </div>
+        <div class="p-6 flex-grow">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-xl font-bold">WildPal</h3>
+            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Completed</span>
+          </div>
+          <p class="text-gray-600 mb-4">Wildlife-themed website featuring creative design elements, educational content, and interactive features.</p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">HTML/CSS</span>
+            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">JavaScript</span>
+            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">UI/UX Design</span>
+            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Responsive</span>
+          </div>
+        </div>
+        <div class="px-6 pb-6">
+          <a href="#" class="block text-center bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition duration-300">View Project</a>
+        </div>
+      </div>
+
+      <!-- Ghetto Saga – Kyekyo -->
+      <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg flex flex-col h-full md:col-span-2">
+        <div class="h-48 bg-red-600 flex items-center justify-center">
+          <i class="fas fa-dragon text-6xl text-white"></i>
+        </div>
+        <div class="p-6 flex-grow">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-xl font-bold">Ghetto Saga – Kyekyo</h3>
+            <span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full">In Progress</span>
+          </div>
+          <p class="text-gray-600 mb-4">Story-driven open-world Python game with immersive environments, character development, and complex gameplay mechanics.</p>
+          <div class="mb-4">
+            <div class="flex justify-between text-sm text-gray-500 mb-1">
+              <span>Progress</span>
+              <span>75%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill"></div>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Python</span>
+            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Pygame</span>
+            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Game Design</span>
+            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Storytelling</span>
+          </div>
+        </div>
+        <div class="px-6 pb-6">
+          <a href="#" class="block text-center bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition duration-300">View Project</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="bg-blue-50 rounded-xl p-8 text-center mb-16">
+      <h2 class="text-2xl font-bold mb-4">Interested in working together?</h2>
+      <p class="text-gray-600 mb-6 max-w-2xl mx-auto">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+      <a href="contact.html" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition duration-300">Get in Touch</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="mb-4 md:mb-0">&copy; 2025 Charles Royals. All rights reserved.</p>
+        <div class="flex space-x-4">
+          <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+            <i class="fab fa-github text-xl"></i>
+          </a>
+          <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+            <i class="fab fa-linkedin text-xl"></i>
+          </a>
+          <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+            <i class="fab fa-twitter text-xl"></i>
+          </a>
+          <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+            <i class="fab fa-dev text-xl"></i>
+          </a>
+        </div>
+      </div>
+    </div>
   </footer>
 </body>
 </html>
