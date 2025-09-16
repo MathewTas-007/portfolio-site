@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | Charles Royals</title>
+  <title>Contact | MathewTas-007</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <script>
@@ -15,27 +15,40 @@
             secondary: '#1E40AF',
             accent: '#10B981',
             dark: '#1F2937',
-            light: '#F9FAFB'
+            light: '#F9FAFB',
+            funky: '#FF6B6B',
+            cool: '#4ECDC4'
           }
         }
       }
     }
   </script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Comfortaa:wght@400;500;600;700&display=swap');
     
     body {
       font-family: 'Inter', sans-serif;
       scroll-behavior: smooth;
     }
     
+    .funky-font {
+      font-family: 'Comfortaa', cursive;
+    }
+    
     .hero-pattern {
-      background-color: #1E40AF;
-      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      background: linear-gradient(135deg, #1E40AF, #3B82F6, #10B981);
+      background-size: 200% 200%;
+      animation: subtleGradient 8s ease infinite;
+    }
+    
+    @keyframes subtleGradient {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
     }
     
     .nav-link {
       position: relative;
+      transition: all 0.3s ease;
     }
     
     .nav-link::after {
@@ -45,44 +58,79 @@
       height: 2px;
       bottom: -4px;
       left: 0;
-      background-color: #3B82F6;
+      background: linear-gradient(45deg, #3B82F6, #10B981);
       transition: width 0.3s ease;
+      border-radius: 1px;
     }
     
     .nav-link:hover::after {
       width: 100%;
     }
     
+    .nav-link:hover {
+      transform: translateY(-1px);
+    }
+    
     .contact-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: all 0.3s ease;
     }
     
     .contact-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     }
     
-    .form-input:focus {
-      outline: none;
-      ring: 2px;
-      ring-color: #3B82F6;
+    .social-icon {
+      transition: all 0.3s ease;
+    }
+    
+    .social-icon:hover {
+      transform: scale(1.05);
+    }
+    
+    .fun-button {
+      background: linear-gradient(45deg, #3B82F6, #10B981);
+      transition: all 0.3s ease;
+    }
+    
+    .fun-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+    }
+    
+    .fade-in {
+      animation: fadeInUp 0.6s ease-out;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gradient-to-br from-blue-50 via-white to-green-50 text-gray-800">
   <!-- Header/Navigation -->
-  <header class="hero-pattern text-white sticky top-0 z-10 shadow-md">
-    <div class="container mx-auto px-4 py-4">
+  <header class="hero-pattern text-white sticky top-0 z-50 shadow-lg">
+    <div class="container mx-auto px-4 py-5">
       <div class="flex flex-col md:flex-row justify-between items-center">
         <div class="text-center md:text-left mb-4 md:mb-0">
-          <h1 class="text-2xl font-bold">Charles Royals</h1>
-          <p class="text-blue-100">Self-Taught Python & Django Developer</p>
+          <h1 class="text-3xl font-bold funky-font flex items-center justify-center md:justify-start">
+            🚀 MathewTas-007 Connect
+          </h1>
+          <p class="text-blue-100 mt-1">Python & Django Developer ✨</p>
         </div>
         
         <nav class="flex space-x-6">
-          <a href="index.html" class="nav-link font-medium hover:text-blue-200">Home</a>
-          <a href="about.html" class="nav-link font-medium hover:text-blue-200">About</a>
-          <a href="projects.html" class="nav-link font-medium hover:text-blue-200">Projects</a>
-          <a href="contact.html" class="nav-link font-medium hover:text-blue-200 font-semibold underline">Contact</a>
+          <a href="index.html" class="nav-link font-medium hover:text-blue-200">🏠 Home</a>
+          <a href="about.html" class="nav-link font-medium hover:text-blue-200">👨‍💻 About</a>
+          <a href="projects.html" class="nav-link font-medium hover:text-blue-200">🎯 Projects</a>
+          <a href="contact.html" class="nav-link font-medium hover:text-blue-200 font-semibold bg-white bg-opacity-20 px-3 py-1 rounded-full">📞 Contact</a>
         </nav>
       </div>
     </div>
@@ -90,160 +138,328 @@
 
   <main class="container mx-auto px-4 py-12">
     <!-- Page Header -->
-    <div class="text-center mb-16">
-      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Get In Touch</h1>
-      <p class="text-xl text-gray-600 max-w-2xl mx-auto">Let's connect! I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+    <div class="text-center mb-16 fade-in">
+      <div class="text-5xl mb-4">👋</div>
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 funky-font">Let's Connect!</h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        Ready to collaborate, discuss ideas, or just have a friendly chat about tech? 
+        My inbox is always open for meaningful conversations! 🎉
+      </p>
+      <div class="mt-6">
+        <span class="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent font-semibold">
+          Usually respond within 24 hours ⚡
+        </span>
+      </div>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
       <!-- Contact Information -->
-      <div>
-        <h2 class="text-2xl font-bold mb-8">Contact Information</h2>
+      <div class="fade-in">
+        <h2 class="text-3xl font-bold mb-8 funky-font">
+          📍 Find Me Here
+        </h2>
         
         <div class="space-y-6">
           <!-- Email -->
-          <div class="contact-card bg-white p-6 rounded-xl shadow-lg flex items-start">
-            <div class="bg-blue-100 p-3 rounded-full mr-4">
-              <i class="fas fa-envelope text-blue-600 text-xl"></i>
-            </div>
-            <div>
-              <h3 class="font-semibold text-lg mb-1">Email</h3>
-              <a href="mailto:youremail@example.com" class="text-blue-600 hover:text-blue-800 transition duration-300">youremail@example.com</a>
-              <p class="text-gray-500 text-sm mt-2">I'll respond within 24 hours</p>
+          <div class="contact-card bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-500">
+            <div class="flex items-center">
+              <div class="bg-blue-100 p-3 rounded-full mr-4">
+                <i class="fas fa-envelope text-blue-600 text-xl"></i>
+              </div>
+              <div class="flex-1">
+                <h3 class="font-bold text-lg mb-1 text-gray-800">📧 Email</h3>
+                <a href="mailto:youremail@example.com" class="text-blue-600 hover:text-blue-800 transition duration-300 font-semibold">
+                  youremail@example.com
+                </a>
+                <p class="text-gray-500 text-sm mt-1">Best way to reach me!</p>
+              </div>
             </div>
           </div>
           
           <!-- GitHub -->
-          <div class="contact-card bg-white p-6 rounded-xl shadow-lg flex items-start">
-            <div class="bg-gray-800 p-3 rounded-full mr-4">
-              <i class="fab fa-github text-white text-xl"></i>
-            </div>
-            <div>
-              <h3 class="font-semibold text-lg mb-1">GitHub</h3>
-              <a href="https://github.com/MathewTas-007" target="_blank" class="text-blue-600 hover:text-blue-800 transition duration-300">github.com/MathewTas-007</a>
-              <p class="text-gray-500 text-sm mt-2">Check out my projects and code</p>
+          <div class="contact-card bg-white p-6 rounded-xl shadow-md border-l-4 border-gray-800">
+            <div class="flex items-center">
+              <div class="bg-gray-100 p-3 rounded-full mr-4">
+                <i class="fab fa-github text-gray-800 text-xl"></i>
+              </div>
+              <div class="flex-1">
+                <h3 class="font-bold text-lg mb-1 text-gray-800">🐙 GitHub</h3>
+                <a href="https://github.com/MathewTas-007" target="_blank" class="text-blue-600 hover:text-blue-800 transition duration-300 font-semibold">
+                  github.com/MathewTas-007
+                </a>
+                <p class="text-gray-500 text-sm mt-1">Check out my code!</p>
+              </div>
             </div>
           </div>
           
           <!-- LinkedIn -->
-          <div class="contact-card bg-white p-6 rounded-xl shadow-lg flex items-start">
-            <div class="bg-blue-700 p-3 rounded-full mr-4">
-              <i class="fab fa-linkedin-in text-white text-xl"></i>
+          <div class="contact-card bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-700">
+            <div class="flex items-center">
+              <div class="bg-blue-100 p-3 rounded-full mr-4">
+                <i class="fab fa-linkedin-in text-blue-700 text-xl"></i>
+              </div>
+              <div class="flex-1">
+                <h3 class="font-bold text-lg mb-1 text-gray-800">💼 LinkedIn</h3>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="text-blue-600 hover:text-blue-800 transition duration-300 font-semibold">
+                  linkedin.com/in/yourprofile
+                </a>
+                <p class="text-gray-500 text-sm mt-1">Professional networking</p>
+              </div>
             </div>
-            <div>
-              <h3 class="font-semibold text-lg mb-1">LinkedIn</h3>
-              <a href="#" class="text-blue-600 hover:text-blue-800 transition duration-300">linkedin.com/in/yourprofile</a>
-              <p class="text-gray-500 text-sm mt-2">Let's connect professionally</p>
+          </div>
+
+          <!-- Twitter -->
+          <div class="contact-card bg-white p-6 rounded-xl shadow-md border-l-4 border-sky-500">
+            <div class="flex items-center">
+              <div class="bg-sky-100 p-3 rounded-full mr-4">
+                <i class="fab fa-twitter text-sky-600 text-xl"></i>
+              </div>
+              <div class="flex-1">
+                <h3 class="font-bold text-lg mb-1 text-gray-800">🐦 Twitter</h3>
+                <a href="https://twitter.com/yourhandle" target="_blank" class="text-blue-600 hover:text-blue-800 transition duration-300 font-semibold">
+                  @yourhandle
+                </a>
+                <p class="text-gray-500 text-sm mt-1">Tech thoughts & updates</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dev.to -->
+          <div class="contact-card bg-white p-6 rounded-xl shadow-md border-l-4 border-green-600">
+            <div class="flex items-center">
+              <div class="bg-green-100 p-3 rounded-full mr-4">
+                <i class="fab fa-dev text-green-600 text-xl"></i>
+              </div>
+              <div class="flex-1">
+                <h3 class="font-bold text-lg mb-1 text-gray-800">📝 Dev.to</h3>
+                <a href="https://dev.to/yourprofile" target="_blank" class="text-blue-600 hover:text-blue-800 transition duration-300 font-semibold">
+                  dev.to/yourprofile
+                </a>
+                <p class="text-gray-500 text-sm mt-1">Coding articles & tips</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Instagram -->
+          <div class="contact-card bg-white p-6 rounded-xl shadow-md border-l-4 border-pink-500">
+            <div class="flex items-center">
+              <div class="bg-pink-100 p-3 rounded-full mr-4">
+                <i class="fab fa-instagram text-pink-600 text-xl"></i>
+              </div>
+              <div class="flex-1">
+                <h3 class="font-bold text-lg mb-1 text-gray-800">📸 Instagram</h3>
+                <a href="https://instagram.com/yourprofile" target="_blank" class="text-blue-600 hover:text-blue-800 transition duration-300 font-semibold">
+                  @yourprofile
+                </a>
+                <p class="text-gray-500 text-sm mt-1">Life & coding journey</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- YouTube -->
+          <div class="contact-card bg-white p-6 rounded-xl shadow-md border-l-4 border-red-500">
+            <div class="flex items-center">
+              <div class="bg-red-100 p-3 rounded-full mr-4">
+                <i class="fab fa-youtube text-red-600 text-xl"></i>
+              </div>
+              <div class="flex-1">
+                <h3 class="font-bold text-lg mb-1 text-gray-800">📺 YouTube</h3>
+                <a href="https://youtube.com/@yourhandle" target="_blank" class="text-blue-600 hover:text-blue-800 transition duration-300 font-semibold">
+                  @yourhandle
+                </a>
+                <p class="text-gray-500 text-sm mt-1">Coding tutorials & vlogs</p>
+              </div>
             </div>
           </div>
         </div>
         
-        <!-- Additional Info -->
-        <div class="mt-10 bg-blue-50 p-6 rounded-xl">
-          <h3 class="font-semibold text-lg mb-3">What I'm Looking For</h3>
-          <p class="text-gray-700 mb-4">I'm currently open to:</p>
-          <ul class="list-disc list-inside text-gray-700 space-y-2">
-            <li>Freelance opportunities</li>
-            <li>Collaborative projects</li>
-            <li>Full-time positions</li>
-            <li>Mentorship opportunities</li>
-          </ul>
+        <!-- What I'm Looking For -->
+        <div class="mt-10 bg-gradient-to-r from-blue-50 to-green-50 p-6 rounded-xl border border-blue-200">
+          <div class="text-center">
+            <div class="text-3xl mb-3">🎯</div>
+            <h3 class="font-bold text-xl mb-4 funky-font text-gray-800">What Gets Me Excited?</h3>
+            <div class="grid grid-cols-2 gap-4 text-gray-700">
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                <span class="text-2xl block mb-2">💼</span>
+                <p class="font-semibold">Freelance Projects</p>
+              </div>
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                <span class="text-2xl block mb-2">🤝</span>
+                <p class="font-semibold">Collaborations</p>
+              </div>
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                <span class="text-2xl block mb-2">💪</span>
+                <p class="font-semibold">Full-time Opportunities</p>
+              </div>
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                <span class="text-2xl block mb-2">🎓</span>
+                <p class="font-semibold">Learning Together</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       
       <!-- Contact Form -->
-      <div>
-        <h2 class="text-2xl font-bold mb-8">Send Me a Message</h2>
+      <div class="fade-in">
+        <h2 class="text-3xl font-bold mb-8 funky-font">
+          💬 Send Me a Message
+        </h2>
         
         <form class="bg-white p-8 rounded-xl shadow-lg">
           <div class="mb-6">
-            <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
-            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-300" placeholder="John Doe">
+            <label for="name" class="block text-gray-700 font-semibold mb-2">👤 Your Name</label>
+            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-300" placeholder="John Awesome Developer">
           </div>
           
           <div class="mb-6">
-            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+            <label for="email" class="block text-gray-700 font-semibold mb-2">📧 Email Address</label>
             <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-300" placeholder="john@example.com">
           </div>
           
           <div class="mb-6">
-            <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+            <label for="subject" class="block text-gray-700 font-semibold mb-2">🎯 Subject</label>
             <select id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-300">
-              <option value="" disabled selected>Select a subject</option>
-              <option value="freelance">Freelance Project</option>
-              <option value="collaboration">Collaboration</option>
-              <option value="job">Job Opportunity</option>
-              <option value="question">Question</option>
-              <option value="other">Other</option>
+              <option value="" disabled selected>What's this about?</option>
+              <option value="freelance">💼 Freelance Project</option>
+              <option value="collaboration">🤝 Collaboration</option>
+              <option value="job">💪 Job Opportunity</option>
+              <option value="question">❓ General Question</option>
+              <option value="hello">👋 Just Saying Hi</option>
+              <option value="other">🎲 Something Else</option>
             </select>
           </div>
           
           <div class="mb-6">
-            <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
-            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-300" placeholder="Hello Charles, I'd like to talk about..."></textarea>
+            <label for="message" class="block text-gray-700 font-semibold mb-2">💭 Your Message</label>
+            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-300 resize-none" placeholder="Hey Mathew! I have this cool idea..."></textarea>
           </div>
           
-          <button type="submit" class="w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition duration-300">
-            Send Message
+          <button type="submit" class="w-full fun-button text-white px-6 py-3 rounded-lg font-semibold text-lg shadow-md">
+            🚀 Send Message
           </button>
         </form>
         
         <!-- Response Time -->
-        <div class="mt-6 text-center text-gray-500">
-          <p>I typically respond to messages within 24 hours</p>
+        <div class="mt-6 text-center">
+          <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+            <p class="text-green-700 font-semibold">
+              ⚡ Quick replies guaranteed - usually within 24 hours!
+            </p>
+          </div>
         </div>
       </div>
     </div>
     
     <!-- FAQ Section -->
-    <div class="bg-blue-50 rounded-xl p-8 mb-16">
-      <h2 class="text-2xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+    <div class="bg-gray-50 rounded-xl p-8 mb-16 fade-in">
+      <div class="text-center mb-10">
+        <div class="text-4xl mb-4">🤔</div>
+        <h2 class="text-3xl font-bold funky-font text-gray-800">Frequently Asked Questions</h2>
+      </div>
       
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-white p-6 rounded-lg shadow">
-          <h3 class="font-semibold text-lg mb-2">What's your typical response time?</h3>
-          <p class="text-gray-600">I usually respond to emails within 24 hours. For urgent matters, please mention "URGENT" in your subject line.</p>
+        <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+          <h3 class="font-bold text-lg mb-3 text-gray-800">⏰ Response Time?</h3>
+          <p class="text-gray-600">I typically respond within 24 hours. For urgent matters, mention "URGENT" in the subject line.</p>
         </div>
         
-        <div class="bg-white p-6 rounded-lg shadow">
-          <h3 class="font-semibold text-lg mb-2">Do you take on freelance projects?</h3>
-          <p class="text-gray-600">Yes, I'm available for freelance work. Feel free to reach out with details about your project.</p>
+        <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+          <h3 class="font-bold text-lg mb-3 text-gray-800">💰 Freelance Work?</h3>
+          <p class="text-gray-600">Yes! I'm available for freelance projects. Feel free to reach out with details about your project.</p>
         </div>
         
-        <div class="bg-white p-6 rounded-lg shadow">
-          <h3 class="font-semibold text-lg mb-2">What technologies do you work with?</h3>
-          <p class="text-gray-600">I primarily work with Python, Django, HTML/CSS, and JavaScript. Check my projects page for more details.</p>
+        <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+          <h3 class="font-bold text-lg mb-3 text-gray-800">🛠️ Tech Stack?</h3>
+          <p class="text-gray-600">Python, Django, HTML/CSS, JavaScript are my main tools. Check my projects page for more details.</p>
         </div>
         
-        <div class="bg-white p-6 rounded-lg shadow">
-          <h3 class="font-semibold text-lg mb-2">Are you open to collaboration?</h3>
-          <p class="text-gray-600">Absolutely! I enjoy collaborating on interesting projects. Reach out if you have an idea you'd like to discuss.</p>
+        <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+          <h3 class="font-bold text-lg mb-3 text-gray-800">🤝 Collaboration?</h3>
+          <p class="text-gray-600">Absolutely! I love collaborating on interesting projects. Reach out with your ideas!</p>
         </div>
       </div>
     </div>
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-8">
+  <footer class="bg-gray-800 text-white py-12">
     <div class="container mx-auto px-4">
-      <div class="flex flex-col md:flex-row justify-between items-center">
-        <p class="mb-4 md:mb-0">&copy; 2025 Charles Royals. All rights reserved.</p>
-        <div class="flex space-x-4">
-          <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+      <div class="text-center mb-8">
+        <h3 class="text-2xl font-bold funky-font mb-4">🌟 Connect With Me</h3>
+        <p class="text-gray-300 mb-6">Find me across the web!</p>
+        
+        <!-- Social Media Icons -->
+        <div class="flex justify-center space-x-4 mb-8">
+          <a href="https://github.com/MathewTas-007" target="_blank" class="social-icon bg-gray-700 hover:bg-gray-600 p-3 rounded-lg">
             <i class="fab fa-github text-xl"></i>
           </a>
-          <a href="#" class="text-gray-300 hover:text-white transition duration-300">
-            <i class="fab fa-linkedin text-xl"></i>
+          <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-icon bg-blue-600 hover:bg-blue-500 p-3 rounded-lg">
+            <i class="fab fa-linkedin-in text-xl"></i>
           </a>
-          <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+          <a href="https://twitter.com/yourhandle" target="_blank" class="social-icon bg-sky-500 hover:bg-sky-400 p-3 rounded-lg">
             <i class="fab fa-twitter text-xl"></i>
           </a>
-          <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+          <a href="https://dev.to/yourprofile" target="_blank" class="social-icon bg-green-600 hover:bg-green-500 p-3 rounded-lg">
             <i class="fab fa-dev text-xl"></i>
           </a>
+          <a href="https://instagram.com/yourprofile" target="_blank" class="social-icon bg-pink-600 hover:bg-pink-500 p-3 rounded-lg">
+            <i class="fab fa-instagram text-xl"></i>
+          </a>
+          <a href="https://youtube.com/@yourhandle" target="_blank" class="social-icon bg-red-600 hover:bg-red-500 p-3 rounded-lg">
+            <i class="fab fa-youtube text-xl"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-700 pt-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="mb-4 md:mb-0 text-gray-300">
+            &copy; 2025 MathewTas-007 Connect. Made with ❤️ and ☕
+          </p>
+          <div class="text-gray-400 text-sm">
+            <span>✨ Always coding, always learning ✨</span>
+          </div>
         </div>
       </div>
     </div>
   </footer>
+
+  <script>
+    // Simple, clean interactions
+    document.addEventListener('DOMContentLoaded', function() {
+      // Form submission
+      const form = document.querySelector('form');
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const button = form.querySelector('button');
+        const originalText = button.textContent;
+        button.textContent = '✨ Message Sent!';
+        button.disabled = true;
+        
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.disabled = false;
+        }, 2000);
+      });
+
+      // Simple fade-in animation for elements
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      });
+
+      document.querySelectorAll('.fade-in').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'all 0.6s ease';
+        observer.observe(el);
+      });
+    });
+  </script>
 </body>
 </html>
